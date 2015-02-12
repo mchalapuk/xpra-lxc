@@ -1,3 +1,3 @@
-# scripts
+# xpra-lxc
 
-Various scripts I did not find better place for.
+Collection of scripts used for running GUI programs inside LXC containers.
