@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+echo 1 > /proc/sys/kernel/unprivileged_userns_clone
+
+# this is done here instead of fstab because it's a 4-step process
+# and --make-unbindable and --make-shared are not supported as normal options
+mount -t tmpfs \
+  -o nosuid,nodev,noatime,size=1g,mode=777,uid=0,gid=0 \
+  shared /shared
+mount --bind /shared /shared
+mount --make-unbindable /shared
+mount --make-shared /shared
+
+exit 0
+
