@@ -1,6 +1,10 @@
 #!/bin/sh
-# Creates shared folder on the container
-# to be run in lxc.hook.pre-mount
+# Creates /shared folder inside the container, so that `bind_shared.sh` will
+# be able to mount it.
+# 
+# This file is referenced in `shared.conf`. It only needs to be placed in
+# proper folder to work (see README.md).
+#
 
 SHARED_DIR="$LXC_ROOTFS_PATH/shared/$LXC_NAME/"
 
