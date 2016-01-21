@@ -3,12 +3,12 @@
 Collection of scripts used for running GUI programs inside LXC containers.
 
 Contents of this project can be used to set-up an **Xpra-Enabled
-Unprivileged Container**. For details please check README files placed
-in subdirectories and comments inside scripts.
+Unprivileged Container**. This projects only container's configuration
+scripts and utilities. It is not a full Xpra on LXC product.
+For details please check README files placed in subdirectories
+and comments inside scripts.
 
-This projects only container's configuration scripts and utilities. It is not
-a full Xpra on LXC product. Following features are not covered in here, but can
-be found elsewhere:
+Following features are not covered in xpra-lxc, but can be found elsewhere:
 
  * Ubuntu fix for user cgroups ([lxc-fix-user-cgroups][lxc-fix-user-cgroups]),
  * Utils for running programs inside LXC containers ([lxc-tricks][lxc-tricks]),
