@@ -10,13 +10,13 @@ This projects only container's configuration scripts and utilities. It is not
 a full Xpra on LXC product. Following features are not covered in here, but can
 be found elsewhere:
 
- * Ubuntu fix for user cgroups ([lxc-fix-user-cgroups][1]),
- * Utils for running programs inside LXC containers ([lxc-tricks][2]),
- * Xpra client set-up ([xpra-client-daemon][3]),
- * Sound forwarding ([pulse-forward][4]).
+ * Ubuntu fix for user cgroups ([lxc-fix-user-cgroups][lxc-fix-user-cgroups]),
+ * Utils for running programs inside LXC containers ([lxc-tricks][lxc-tricks]),
+ * Xpra client set-up ([xpra-client-daemon][xpra-client-daemon]),
+ * Sound forwarding ([pulse-forward][pulse-forward]).
 
-1: https://github.com/muroc-lab/lxc-fix-user-cgroups
-2: https://github.com/muroc-lab/lxc-tricks
-3: https://github.com/muroc-lab/xpra-client-daemon
-4: https://github.com/muroc-lab/pulse-forward 
+[lxc-fix-user-cgroups]: https://github.com/muroc-lab/lxc-fix-user-cgroups
+[lxc-tricks]: https://github.com/muroc-lab/lxc-tricks
+[xpra-client-daemon]: https://github.com/muroc-lab/xpra-client-daemon
+[pulse-forward]: https://github.com/muroc-lab/pulse-forward 
 
