@@ -1,11 +1,23 @@
 #!/bin/sh -e
+#
+# Contents of this file are to be places in /etc/rc.local (or any other
+# init file) on host operating system from which lxc containers will be
+# run (the one installed on physical hardware).
+#
+# Features:
+#  * Enabled kernel features needed for running unprivildged containers,
+#  * Temporary file system created in /shared directory which will be used
+#    to share unix sockets between host and container (so that xpra may work
+#    withot network traffic),
+
+TMPFS_SIZE=1g
 
 echo 1 > /proc/sys/kernel/unprivileged_userns_clone
 
-# this is done here instead of fstab because it's a 4-step process
-# and --make-unbindable and --make-shared are not supported as normal options
+# Mounts are done in here instead of fstab because it's a 4-step process
+# and --make-unbindable, --make-shared are not available as -o options.
 mount -t tmpfs \
-  -o nosuid,nodev,noatime,size=1g,mode=777,uid=0,gid=0 \
+  -o nosuid,nodev,noatime,size=$TMPFS_SIZE,mode=777,uid=0,gid=0 \
   shared /shared
 mount --bind /shared /shared
 mount --make-unbindable /shared
